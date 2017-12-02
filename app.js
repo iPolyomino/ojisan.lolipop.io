@@ -3,12 +3,8 @@
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+const index = require("./routes/index");
 
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
-});
+app.use("/", index);
 
-app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}`);
-});
+module.exports = app;
